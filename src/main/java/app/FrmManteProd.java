@@ -238,7 +238,11 @@ public class FrmManteProd extends JFrame {
 				txtPrecio.setText(String.valueOf(obj.getPrecio()));
 				cboCategorias.setSelectedItem(obj.getCategoria().getDescripcion());
 				cboProveedor.setSelectedItem(obj.getProveedor().getNombre());
-
+				
+			
+				txtCódigo.disable();
+				
+				
 			}
 		});
 		btnSeleccionar.setBounds(276, 115, 112, 35);
@@ -258,6 +262,7 @@ public class FrmManteProd extends JFrame {
 		btnLimpiar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				limpiar();
+				
 			}
 		});
 		btnLimpiar.setBounds(276, 157, 112, 31);
@@ -311,6 +316,7 @@ public class FrmManteProd extends JFrame {
 		txtSalida.setText("");
 		cboCategorias.setSelectedIndex(0);
 		cboProveedor.setSelectedIndex(0);
+		txtCódigo.enable(true);
 	}
 
 	void llenaComboCategoria() {
