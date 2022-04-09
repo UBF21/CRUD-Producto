@@ -316,7 +316,7 @@ public class FrmManteProd extends JFrame {
 		txtSalida.setText("");
 		cboCategorias.setSelectedIndex(0);
 		cboProveedor.setSelectedIndex(0);
-		txtCódigo.enable(true);
+		
 	}
 
 	void llenaComboCategoria() {
