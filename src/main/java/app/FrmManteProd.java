@@ -114,7 +114,7 @@ public class FrmManteProd extends JFrame {
 		txtSalida = new JTextArea();
 		scrollPane.setViewportView(txtSalida);
 
-		JButton btnListado = new JButton("Listado");
+		JButton btnListado = 	new JButton("Listado");
 		btnListado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -145,7 +145,7 @@ public class FrmManteProd extends JFrame {
 		contentPane.add(txtCódigo);
 		txtCódigo.setColumns(10);
 
-		JLabel lblCodigo = new JLabel("Id. Producto :");
+		JLabel lblCodigo = new JLabel("Id. Producto : ");
 		lblCodigo.setBounds(10, 11, 102, 14);
 		contentPane.add(lblCodigo);
 
@@ -395,13 +395,13 @@ public class FrmManteProd extends JFrame {
 
 		// registrar un nuevo usuario
 
-		// Fabrica de de acceso de datos
+	
 		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("mysql");
 
-		// Manejador de Identidad
+		
 		EntityManager em = fabrica.createEntityManager();
 
-		// empezar los procesos....> create,delete,update,select
+
 		em.getTransaction().begin();
 
 		idcategoria = obtenerIdCombo(new Categoria(), categoria);
@@ -426,7 +426,6 @@ public class FrmManteProd extends JFrame {
 			em.getTransaction().rollback();
 		}
 
-		// confirmacion de procesos
 
 		// cerrar manejador
 		em.close();
@@ -434,10 +433,10 @@ public class FrmManteProd extends JFrame {
 
 	void actualizar(Producto obj) {
 
-		// Fabrica de de acceso de datos
+
 		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("mysql");
 
-		// Manejador de Identidad
+		
 		EntityManager em = fabrica.createEntityManager();
 
 		// empezar los procesos....> create,delete,update,select
@@ -457,7 +456,6 @@ public class FrmManteProd extends JFrame {
 		if (producto != null) {
 
 			em.merge(producto);
-			// confirmacion de procesos
 			mensaje("Se Actualizo el Registro");
 			limpiar();
 			em.getTransaction().commit();
