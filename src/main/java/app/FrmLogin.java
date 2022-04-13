@@ -25,6 +25,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
 
 public class FrmLogin extends JFrame {
 
@@ -79,7 +80,7 @@ public class FrmLogin extends JFrame {
 		lblClave.setBounds(10, 64, 102, 14);
 		contentPane.add(lblClave);
 		
-		txtClave = new JTextField();
+		txtClave = new JPasswordField();
 		txtClave.setColumns(10);
 		txtClave.setBounds(122, 61, 161, 20);
 		contentPane.add(txtClave);
@@ -87,7 +88,7 @@ public class FrmLogin extends JFrame {
 	}
 
 	
-	private JTextField txtClave;
+	private JPasswordField txtClave;
 	
 	
 	void registrar() {
