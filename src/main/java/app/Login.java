@@ -20,22 +20,22 @@ public class Login {
 		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("mysql");
 
 		// Manejador de Identidad
-		//EntityManager em = fabrica.createEntityManager();
+		EntityManager em = fabrica.createEntityManager();
 
-		//TypedQuery<Usuario> consulta = em.createQuery("select x from Usuario x where x.usuario = :xsr and x.clave = :clave", Usuario.class);
-		//consulta.setParameter("clave",clave);
-		//consulta.setParameter("xsr",usuario);
+		TypedQuery<Usuario> consulta = em.createQuery("select x from Usuario x where x.usuario = :xsr and x.clave = :clave", Usuario.class);
+		consulta.setParameter("clave",clave);
+		consulta.setParameter("xsr",usuario);
 		
-		//Usuario obj = consulta.getSingleResult();
+		Usuario obj = consulta.getSingleResult();
 		
-		//try {
-			//System.out.println(obj);
-			//System.out.println(obj.getUsuario());
-			//System.out.println(obj.getClave());
-		//} catch (Exception e) {
-			//System.out.println("Usuario no valido");
-		//}
+		try {
+			System.out.println(obj);
+			System.out.println(obj.getUsuario());
+			System.out.println(obj.getClave());
+		} catch (Exception e) {
+			System.out.println("Usuario no valido");
+		}
 		
-		//em.close();
+		em.close();
 	}
 }
